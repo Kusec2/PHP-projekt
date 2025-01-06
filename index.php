@@ -19,6 +19,9 @@
         <!--favicon meta-->
         <link rel="icon" href="img/favicon2.ico" type="image/x-icon"/>
         <!--end favicon meta-->
+        <!-- Google Fonts -->
+		<link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet"> 
+		<!-- End Google Fonts -->
 
         <title>Projektni zadatak</title>
         
