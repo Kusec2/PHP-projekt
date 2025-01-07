@@ -26,15 +26,13 @@
     <body>
         <header>
             
-            <?php include("menu.php");?>
-            
         </header>
         <main>
             <div>
                 <h1>3D printanje</h1>
             </div>
             <figure id="index">
-                <img src="img/printanje.webp"  alt="3D printanje" title="3D printanje">
+                <img src="img/printanje.webp" alt="3D printanje" title="3D printanje">
                 <figcaption style="background-color: rgb(148, 164, 116);">3D printanje je proces 
                     aditivne proizvodnje pomoću kojeg iz digitalnog dizajna dobivamo fizički predmet</figcaption>
             </figure>
@@ -80,8 +78,5 @@
                 </p>
             </div>
         </main>
-        <footer>
-            <p class="copyright">Copyright &copy; 2024 Marko Kušec</p>
-        </footer>
     </body>
 </html>

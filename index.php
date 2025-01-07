@@ -1,7 +1,25 @@
-<?php
-# Database connection
-	include ("dbconn.php");
+<?php 
 
+	# Stop Hacking attempt
+	define('__APP__', TRUE);
+	
+	# Start session
+    session_start();
+	
+	# Database connection
+	include ("dbconn.php");
+	
+	# Variables MUST BE INTEGERS
+    if(isset($_GET['menu'])) { $menu   = (int)$_GET['menu']; }
+	if(isset($_GET['action'])) { $action   = (int)$_GET['action']; }
+	
+	# Variables MUST BE STRINGS A-Z
+    if(!isset($_POST['_action_']))  { $_POST['_action_'] = FALSE;  }
+	
+	if (!isset($menu)) { $menu = 1; }
+	
+	# Classes & Functions
+    include_once("functions.php");
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -11,8 +29,8 @@
         <!--End CSS--> 
 
         <!--meta elements-->
-        <meta name="viewport" content="width=device-width; initial-scale=1.0">
-        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="content-type" content="text/html, charset=utf-8">
         <meta name="description" content="some description">
         <meta name="keywords" content="keyword 1,keyword 2, keyword 3,keyword 4,...">
         <meta name="author" content="Marko Kušec">
@@ -20,7 +38,8 @@
         <link rel="icon" href="img/favicon2.ico" type="image/x-icon"/>
         <!--end favicon meta-->
         <!-- Google Fonts -->
-		<link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet"> 
+		<link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+
 		<!-- End Google Fonts -->
 
         <title>Projektni zadatak</title>
@@ -56,17 +75,10 @@
         else if ($_GET['menu'] == 7) { include("signin.php"); }
 
         ?>
-            <div class="socialmedia">
-                <p>Social media:
-                <br>
-                <a href="https://www.facebook.com/3dglobe5/" target="_blank"><img src="img/facebook.webp" alt="facebook" title="facebook" style="width:24px; margin-top:0.4em"></a>
-                <a href="https://twitter.com/3dglobe1" target="_blank"><img src="img/twitter (X).png" alt="X" title="X" style="height:24px; width: 25px; margin-top:0.4em;"></a>
-                <a href="https://www.youtube.com/channel/UCDnKHzub2nofWSyv1hDqWKw" target="_blank"><img src="img/youtube.webp" style=" height:24px; width:24px; margin-top:0.4em"></a>
-                </p>
-            </div>
+           
         </main>
         <footer>
-            <p class="copyright">Copyright &copy; 2024 Marko Kušec</p>
+            <p class="copyright">Copyright &copy; 2025 Marko Kušec</p>
         </footer>
     </body>
 </html>

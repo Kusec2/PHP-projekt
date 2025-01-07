@@ -20,17 +20,7 @@
     </head>
     <body>
         <header>
-            <div class=slika1></div>
-            <nav class="stranice">
-                <img src="img/3d_printing_logo_.jpg" style="width:75px; float:left;" >
-                <ul>
-                    <li><a href="index.html">Početna</a></li>
-                    <li><a href="galerija.html">Galerija</a></li>
-                    <li><a href="vijesti.html">Vijesti</a></li>
-                    <li><a href="o nama.html">O nama</a></li>
-                    <li><a href="kontakt.html">Kontakt</a></li>
-                </ul>
-            </nav>
+            
         </header>
         <main>
             <h1>Vijesti</h1>
@@ -63,8 +53,6 @@
             </div>
             
         </main>
-        <footer>
-            <p class="copyright">Copyright &copy; 2024 Marko Kušec</p>
-        </footer>
+       
     </body>
 </html>

@@ -1,3 +1,7 @@
+<nav class="stranice">
+    <a href="index.php?menu=1"> 
+        <img src="img/3d_printing_logo_.jpg" style="width:75px; float:left;" >
+    </a>
 <ul>
     <li><a href="index.php?menu=1">Početna</a></li>
     <li><a href="index.php?menu=2">Galerija</a></li>
@@ -12,3 +16,4 @@
         <li><a href="signout.php">Odjava</a></li>
     <?php endif; ?>
 </ul>
+    </nav>

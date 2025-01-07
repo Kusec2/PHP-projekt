@@ -1,5 +1,5 @@
 body,html{
-    font-family:Garamond, serif;
+    font-family: 'Oswald', sans-serif;
     margin:0 ;
     background-image: url("img/background.jpg");
     background-repeat: no-repeat;
@@ -51,9 +51,11 @@ p.copyright{
 
 
 
-/*INDEX.HTML*/
+/*HOME.PHP*/
 
 .text{
+    text-indent: 40px;
+    word-spacing: 2px;
     background-color:rgba(173, 216, 230, 0.8);
     padding:10px;
     
@@ -116,7 +118,7 @@ a.globe:hover
     }
 }
 
-/*GALERIJA.HTML*/
+/*GALERIJA.PHP*/
 
 .galerija{
     
@@ -192,7 +194,7 @@ section {
     }
 }
 
-/*O NAMA.HTML*/
+/*O NAMA.php*/
 
 .o_nama {
     float:left;
@@ -205,6 +207,7 @@ section {
 
 .o_nama_text{
     background-color:rgba(173, 216, 230, 0.8);
+    text-indent: 40px;
     padding-bottom:5px;
     
     
@@ -272,7 +275,7 @@ input[type=radio]{
     
 }
 
-/*VIJESTI.HTML*/
+/*VIJESTI.PHP*/
 .vijesti{
     background-color:rgba(173, 216, 230, 0.8);
     padding:10px 0 20px 0;
