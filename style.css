@@ -239,7 +239,7 @@ label{
     font-weight:bold;
     padding-left:12px;
 }
-input[type=text], input[type=email], input[type=file], textarea{
+input[type=text], input[type=email], input[type=password], input[type=file], select[name="drzava"], textarea{
     width: 50%;
     padding: 12px;
     margin-left:12px;

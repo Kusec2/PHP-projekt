@@ -1,22 +1,6 @@
 <!DOCTYPE HTML>
 <html>
-    <head>
-        <!--CSS-->
-        <link rel="stylesheet" href="style.css">
-        <!--End CSS--> 
-
-        <!--meta elements-->
-        <meta name="viewport" content="width=device-width; initial-scale=1.0">
-        <meta http-equiv="content-type" content="text/html; charset=utf-8">
-        <meta name="description" content="some description">
-        <meta name="keywords" content="keyword 1,keyword 2, keyword 3,keyword 4,...">
-        <meta name="author" content="Marko Kušec">
-        <!--favicon meta-->
-        <link rel="icon" href="img/favicon2.ico" type="image/x-icon"/>
-        <!--end favicon meta-->
-
-        <title>Projektni zadatak</title>
-        
+    <head> 
     </head>
     <body>
         <header>

@@ -1,46 +1,21 @@
 <!DOCTYPE HTML>
 <html>
     <head>
-        <!--CSS-->
-        <link rel="stylesheet" href="style.css">
-        <!--End CSS--> 
-
-        <!--meta elements-->
-        <meta name="viewport" content="width=device-width; initial-scale=1.0">
-        <meta http-equiv="content-type" content="text/html; charset=utf-8">
-        <meta name="description" content="some description">
-        <meta name="keywords" content="keyword 1,keyword 2, keyword 3,keyword 4,...">
-        <meta name="author" content="Marko Kušec">
-        <!--favicon meta-->
-        <link rel="icon" href="img/favicon2.ico" type="image/x-icon"/>
-        <!--end favicon meta-->
-
-        <title>Projektni zadatak</title>
-        
+   
     </head>
     <body>
         <header>
-            <div class=slika1></div>
-            <nav class="stranice">
-                <img src="img/3d_printing_logo_.jpg" style="width:75px; float:left;" >
-                <ul>
-                    <li><a href="index.html">Početna</a></li>
-                    <li><a href="galerija.html">Galerija</a></li>
-                    <li><a href="vijesti.html">Vijesti</a></li>
-                    <li><a href="o nama.html">O nama</a></li>
-                    <li><a href="kontakt.html">Kontakt</a></li>
-                </ul>
-            </nav>
+        <h1>Galerija</h1>
+        <nav class="galerija_izbornik">
+            <ul>
+                <li><a href="index.php?menu=2&submenu=1">FDM Printeri</a></li>
+                <li><a href="index.php?menu=2&submenu=2">Printeri na bazi smole</a></li>
+                <li><a href="index.php?menu=2&submenu=3">3D modeli</a></li>
+            </ul>
+        </nav>
         </header>
         <main>
-            <h1>Galerija</h1>
-            <nav class="galerija_izbornik" >
-                <ul>
-                    <li><a href="galerija.html">FDM  Printeri</a></li>
-                    <li><a href="galerija_smola_printeri.html">Printeri na bazi smole (SLA / DLP / LCD)</a></li>
-                    <li><a href="galerija_modeli.html">3D modeli</a></li>
-            </ul>
-            </nav>  
+             
             
                 <section>
                 <div class="galerija">
@@ -173,13 +148,7 @@
                     </figcaption>
                 </figure>
             </div>
-            </section>
-            
-            
-            
+            </section> 
         </main>
-        <footer>
-            <p class="copyright">Copyright &copy; 2024 Marko Kušec</p>
-        </footer>
     </body>
 </html>

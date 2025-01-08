@@ -57,7 +57,28 @@
         if (!isset($_GET['menu']) || $_GET['menu'] == 1) { include("home.php"); }
         
         # Galerija
-        else if ($_GET['menu'] == 2) { include("galerija.php"); }
+        else if ($_GET['menu'] == 2) { 
+            # Provjera postoji li podmeni
+            if (isset($_GET['submenu'])) {
+                # Učitaj sadržaj prema podmeniju
+                switch ($_GET['submenu']) {
+                    case 1:
+                        include("galerija.php"); // Datoteka za FDM printere
+                        break;
+                    case 2:
+                        include("galerija_smola_printeri.php"); // Datoteka za printere na bazi smole
+                        break;
+                    case 3:
+                        include("galerija_modeli.php"); // Datoteka za 3D modele
+                        break;
+                    default:
+                        include("galerija.php"); // Zadani sadržaj galerije
+                }
+    } else {
+        # Ako podmeni nije odabran, učitaj osnovni sadržaj galerije
+        include("galerija.php");
+    }
+}
         
         # Vijesti
         else if ($_GET['menu'] == 3) { include("vijesti.php"); }
@@ -78,7 +99,7 @@
            
         </main>
         <footer>
-            <p class="copyright">Copyright &copy; 2025 Marko Kušec</p>
+            <p class="copyright">Copyright &copy; <?php print date("Y"); ?> Marko Kušec</p>
         </footer>
     </body>
 </html>

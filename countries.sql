@@ -3,10 +3,10 @@ SET time_zone = "+00:00";
 
 -- Table structure for table `countries`
 
-CREATE TABLE 'countries' (
-    `id` int(11) PRIMARY KEY AUTO_INCREMENT NOT NULL,
-    `country_code` varchar(2) NOT NULL DEFAULT '',
-    `country_name` varchar(100) NOT NULL DEFAULT ''
+CREATE TABLE countries (
+    id int(11) PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    country_code varchar(2) NOT NULL DEFAULT '',
+    country_name varchar(100) NOT NULL DEFAULT ''
 );
 
 -- Dumping data for table `countries`
