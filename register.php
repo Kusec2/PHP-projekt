@@ -8,9 +8,11 @@
         
         <main>
             <h1>Registracija</h1>
+            <div class="registracija">
             <?php 
             if ($_POST['_action_'] == FALSE){?>
-                <form action="" id="registracija_forma" name="registracija_forma" method="POST">
+
+                <form action="" id="register_form" name="register_form" method="POST">
                     <input type="hidden" id="_action_" name="_action_" value="TRUE">
 
                     <label for="ime">Ime *</label><br>
@@ -83,7 +85,7 @@
         ?>
             
             
-
+        </div>
         </main>
     
     </body>

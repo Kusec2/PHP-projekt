@@ -225,7 +225,7 @@ section {
     }
 }
 
-/*KONTAKT.HTML*/
+/*KONTAKT.php*/
 .contact{
     margin: 1em;
     
@@ -322,4 +322,12 @@ input[type=radio]{
         width:40%;
     }
     
+}
+
+/*REGISTER.PHP*/
+
+
+#register_form{
+    background-color:rgba(173, 216, 230, 0.8);
+    padding:12px;
 }
