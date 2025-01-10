@@ -1,8 +1,3 @@
-<?php
-# Database connection
-	include ("dbconn.php");
-
-?>
 <!DOCTYPE HTML>
 <html>
     <head> 

@@ -49,10 +49,12 @@
                         ?>
                     </select>
                     <input type="submit" value="Pošalji">
-
             </form>
+            
             <?php
+            
             } else if ($_POST['_action_'] == TRUE) {
+                
                 $query  = "SELECT * FROM users";
                 $query .= " WHERE email='" .  $_POST['email'] . "'";
                 $query .= " OR username='" .  $_POST['korime'] . "'";
@@ -62,9 +64,9 @@
                 // Ako postoji korisnik s istim emailom ili username
                 if ($row) {
                     // Ispis poruke da korisnik već postoji
-                    ?>
-                    <p>Korisnik sa ovim email-om i/ili korisničkim imenom već postoji!</p>
-                    <?php
+                    $_SESSION['message'] = '<p>Korisnik sa ovim email-om i/ili korisničkim imenom već postoji!</p>'; 
+                    $_SESSION['message_type']= 'error';
+                    
                 }
                 else {
                     // Kreiranje hashirane lozinke
@@ -74,15 +76,14 @@
                     $query  = "INSERT INTO users (firstname, lastname, email, username, password, country)";
                     $query .= " VALUES ('" . $_POST['ime'] . "', '" . $_POST['prezime'] . "', '" . $_POST['email'] . "', '" . $_POST['korime'] . "', '" . $pass_hash . "', '" . $_POST['drzava'] . "')";
                     $result = @mysqli_query($MySQL, $query);
-            
                     
-                    ?>
-                    <p><?php echo ucfirst(strtolower($_POST['ime'])) . ' ' . ucfirst(strtolower($_POST['prezime'])); ?>, hvala na registraciji </p>
-                    <hr>
-                    <?php
+                    
+                    $_SESSION['message']=  "<p>" . ucfirst(strtolower($_POST['ime'])) . ' ' . ucfirst(strtolower($_POST['prezime'])) . ", hvala na registraciji!</p>";
+                    $_SESSION['message_type']= 'success';
+                    "<hr>";
                 }
-            }
-        ?>
+            }   ?>
+        
             
             
         </div>

@@ -38,8 +38,7 @@
         <link rel="icon" href="img/favicon2.ico" type="image/x-icon"/>
         <!--end favicon meta-->
         <!-- Google Fonts -->
-		<link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
-
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 		<!-- End Google Fonts -->
 
         <title>Projektni zadatak</title>
@@ -53,11 +52,24 @@
         </header>
         <main>
         <?php
+       if (isset($_SESSION['message'])) {
+        // Provjeri tip poruke
+        $messageType = isset($_SESSION['message_type']) ? $_SESSION['message_type'] : ''; // Ako nije postavljena, ostavi praznu
+    
+        // Ispis poruke s odgovarajućim CSS klasama
+        echo '<div class="' . ($messageType == 'error' ? 'message-error' : 'message-success') . '">';
+        echo $_SESSION['message'];
+        echo '</div>';
+    
+        // Očisti poruku iz sesije
+        unset($_SESSION['message']);
+        unset($_SESSION['message_type']);
+    }
         # Homepage
-        if (!isset($_GET['menu']) || $_GET['menu'] == 1) { include("home.php"); }
+        if (!isset($menu) || $menu == 1) { include("home.php"); }
         
         # Galerija
-        else if ($_GET['menu'] == 2) { 
+        else if ($menu == 2) { 
             # Provjera postoji li podmeni
             if (isset($_GET['submenu'])) {
                 # Učitaj sadržaj prema podmeniju
@@ -81,19 +93,22 @@
 }
         
         # Vijesti
-        else if ($_GET['menu'] == 3) { include("vijesti.php"); }
+        else if ($menu == 3) { include("vijesti.php"); }
         
         # O nama
-        else if ($_GET['menu'] == 4) { include("o nama.php"); }
+        else if ($menu == 4) { include("o nama.php"); }
 
         # Kontakt
-        else if ($_GET['menu'] == 5) { include("kontakt.php"); }
+        else if ($menu == 5) { include("kontakt.php"); }
 
         # Registracija
-        else if ($_GET['menu'] == 6) { include("register.php"); }
+        else if ($menu == 6) { include("register.php"); }
 
         # Prijava
-        else if ($_GET['menu'] == 7) { include("signin.php"); }
+        else if ($menu == 7) { include("signin.php"); }
+
+        # Admin webpage
+	    else if ($menu == 8) { include("admin.php"); }
 
         ?>
            

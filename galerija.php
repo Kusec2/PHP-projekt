@@ -10,9 +10,9 @@
             <h1>Galerija</h1>
             <nav class="galerija_izbornik">
                 <ul>
-                    <li><a href="index.php?menu=2&submenu=1">FDM Printeri</a></li>
-                    <li><a href="index.php?menu=2&submenu=2">Printeri na bazi smole</a></li>
-                    <li><a href="index.php?menu=2&submenu=3">3D modeli</a></li>
+                    <li><a href="index.php?menu=2&amp;submenu=1">FDM Printeri</a></li>
+                    <li><a href="index.php?menu=2&amp;submenu=2">Printeri na bazi smole</a></li>
+                    <li><a href="index.php?menu=2&amp;submenu=3">3D modeli</a></li>
                 </ul>
             </nav>  
             
