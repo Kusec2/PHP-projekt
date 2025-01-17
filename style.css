@@ -20,29 +20,33 @@ p.copyright{
     clear:both;
 }
 
-/* Logo styling */
-a.logo img {
-    width:70px;
-    display:flex;
-    margin-right:10px;
-    border-radius: 5px; /* Kružni oblik logotipa */
-    border: 2px solid #fff; /* Bijeli okvir */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Suptilna sjena */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-a.logo img:hover {
-    transform: scale(1.1); /* Povećanje na hover */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* Intenzivnija sjena */
+h2{
+    margin:0.5em;
 }
 
 /* Navbar container */
 .stranice {
     display: flex;
-    align-items: center; /* Vertikalno centriranje logotipa i linkova */
-    background: linear-gradient(in hsl, #333, #1b5877); /* Tamno prema kraljevsko plavoj */
-    height: 100px; /* Povećana visina navbar-a */
-    padding: 0 20px; /* Unutarnji razmak */
+    flex-wrap: wrap; /* Omogućava prelamanje stavki */
+    align-items: center;
+    background: linear-gradient(to right, #333, #1b5877);
+    padding: 15px 20px; /* Dinamična visina uz padding */
+    gap: 10px; /* Razmak između elemenata u navbaru */
+}
+
+/* Logo styling */
+a.logo img {
+    width: 70px;
+    margin-right: 10px;
+    border-radius: 5px;
+    border: 2px solid #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+a.logo img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
 }
 
 /* Navbar lista */
@@ -51,28 +55,44 @@ a.logo img:hover {
     display: flex;
     margin: 0;
     padding: 0;
-    flex-grow: 1; /* Prostor između logotipa i stavki */
-    justify-content: flex-start; /* Centriranje stavki */
+    flex-wrap: wrap; /* Omogućava prelamanje stavki */
+    justify-content: flex-start; /* Poravnanje stavki desno */
+    align-items: center; /* Centriranje stavki vertikalno unutar navbar-a */
     gap: 20px; /* Razmak između stavki */
+    flex-grow: 1; /* Stavke zauzimaju preostali prostor */
 }
 
 /* Navbar stavke */
 .stranice ul li a {
     text-decoration: none;
-    color: #fff; /* Bijeli tekst */
+    color: #fff;
     font-weight: bold;
-    font-size: 18px; /* Veći font */
+    font-size: 18px;
     padding: 10px 20px;
     transition: all 0.3s ease;
+    white-space: nowrap; /* Sprečava prelamanje teksta u stavkama */
 }
 
 .stranice ul li a:hover {
-    transform: scale(1.1); /* Povećanje na hover */
-    color: #007BFF; /* Plavi tekst na hover */
-    background-color: rgba(255, 255, 255, 0.1); /* Blaga bijela pozadina */
-    border-radius: 5px; /* Zaobljeni rubovi */
-    
+    transform: scale(1.1);
+    color: #007BFF;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
 }
+
+/* Responzivnost */
+@media screen and (max-width: 768px) {
+    .stranice ul {
+        justify-content: center; /* Stavke centrirane na manjim ekranima */
+        gap: 10px; /* Smanjeni razmak između stavki */
+    }
+
+    .stranice ul li a {
+        font-size: 16px; /* Manji font za mobilne uređaje */
+        padding: 8px 15px;
+    }
+}
+
 
 
 
@@ -121,7 +141,7 @@ p {
 	line-height: 1.4em;
 	letter-spacing: 1px;
     color:black;
-    font-weight:bold;
+    font-weight: bolder;
 }
 
  #index figcaption{
@@ -151,17 +171,17 @@ a.globe:hover
 
 @media screen and (max-width:700px){
     #index {
-        width:50%;
+        width:auto;
     }
 }
 
 @media screen and (max-width:400px){
     #index{
-        width:40%;
+        width:auto;
     }
 }
 
-@media screen and (min-width:700px) and (max-width:1300px){
+@media screen and (min-width:650px) and (max-width:1400px){
     #index{
         width:45%;
     }
@@ -169,27 +189,73 @@ a.globe:hover
 
 /*GALERIJA.PHP*/
 
-.galerija{
-    
-    width: 31%;
-    margin:15px;
-    float:left;
-    background-color:rgba(173, 216, 230, 0.8);
-    border-radius:20px;
-        
+/* Svaka stavka galerije */
+.galerija {
+    background-color: rgba(173, 216, 230, 0.8); /* Boja pozadine stavki */
+    border-radius: 20px; /* Zaobljeni rubovi */
+    overflow: hidden; /* Sprečava prelazak sadržaja izvan granica */
+    display: flex; /* Fleksibilni raspored za tekst i sliku */
+    flex-direction: column; /* Vertikalni raspored */
+    align-items: center; /* Centriranje sadržaja */
+    justify-content: space-between; /* Prostor između elemenata */
+    padding: 15px; /* Unutarnji razmak unutar svake stavke */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Blaga sjena */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animacija na hover */
 }
-.galerija li{
+
+.galerija:hover {
+    transform: scale(1.05); /* Blago povećanje na hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Intenzivnija sjena */
+}
+
+/* Stilizacija slike */
+.galerija img {
+    width: 100%; /* Širina slike odgovara širini stavke */
+    border-radius: 5px; /* Zaobljeni rubovi slike */
+    margin-bottom: 10px; /* Razmak ispod slike */
+}
+
+/* Stilizacija naslova unutar galerije */
+.galerija h3 {
+    font-size: 1.2rem;
+    margin: 10px 0;
+    color: #333; /* Tamno siva boja */
+    text-align: left;
+}
+
+/* Stilizacija vanjske liste */
+.galerija ul {
+    padding: 0 10px; /* Unutarnji razmak za lijepe margine */
+    margin: 0;
+}
+
+.galerija ul li {
+    margin: 5px 0; /* Razmak između stavki */
+}
+
+/* Stilizacija ugniježđenih lista */
+.galerija ul ul {
+    margin-left: 20px; /* Pomicanje ugniježđene liste udesno */
+}
+
+.galerija ul ul li {
+    font-size: 0.9rem; /* Nešto manji font za ugniježđene stavke */
+}
+
+/* Stilizacija cijene */
+.galerija .cijena {
+    font-size: 1rem;
     font-weight: bold;
+    color: #007BFF; /* Plava boja za cijenu */
+    margin-left:10px;
+    margin-top: 10px;
+    text-align: left;
 }
 
-.galerija img{
-    width:100%;
-    
-}
 
 
 
-.galerija_izbornik ul {
+.podstranice ul {
     list-style-type: none;
     display: flex;
     justify-content: flex-start; /* Centriranje izbornika */
@@ -200,19 +266,19 @@ a.globe:hover
     margin: 0;
 }
 
-.galerija_izbornik li {
+.podstranice li {
     margin: 0 5px; /* Razmak između stavki */
     border-radius: 5px; /* Zaobljeni rubovi svakog elementa */
     overflow: hidden; /* Sprječava prelazak sadržaja izvan granica */
     transition: transform 0.3s ease; /* Prijelaz za hover efekt */
 }
 
-.galerija_izbornik li:hover {
+.podstranice li:hover {
     transform: scale(1.1); /* Povećanje na hover */
     box-shadow: 0 4px 10px rgba(173, 216, 230, 0.7); /* Sjaj na hover */
 }
 
-.galerija_izbornik li a {
+.podstranice li a {
     display: block; /* Blok prikaz za ravnomjerno popunjavanje */
     font-weight: bold;
     color: #333; /* Tamnija boja teksta */
@@ -223,13 +289,13 @@ a.globe:hover
     transition: background-color 0.3s ease, color 0.3s ease; /* Glatki prijelazi */
 }
 
-.galerija_izbornik li a:hover {
+.podstranice li a:hover {
     background-color: lightblue; /* Promjena boje pozadine na hover */
     color: white; /* Bijeli tekst na hover */
     text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4); /* Suptilna sjena teksta */
 }
 
-.galerija_izbornik ul::after {
+.podstranice ul::after {
     content: "";
     display: table;
     clear: both;
@@ -239,8 +305,14 @@ a.globe:hover
    
     
 
-section { 
-    overflow: hidden;
+/* Kontejner za galeriju (sekcija) */
+section {
+    display: grid; /* Aktivacija CSS Grid Layout-a */
+    grid-template-columns: repeat(3, 1fr); /* 3 stupca na full-screen */
+    gap: 20px; /* Razmak između stavki */
+    padding: 20px; /* Unutarnji razmak sekcije */
+    background-color: rgba(173, 216, 230, 0.2); /* Suptilna pozadina */
+    border-radius: 10px; /* Zaobljeni rubovi kontejnera */
 }
 
 #cijena{
@@ -248,15 +320,16 @@ section {
     font-weight:bold;
 }
 
-@media screen and (max-width:700px){
-    .galerija{
-        width:90%;
+/* Responzivnost */
+@media screen and (max-width: 700px) {
+    section {
+        grid-template-columns: 1fr; /* Jedan stupac na uskim ekranima */
     }
 }
 
-@media screen and (min-width:700px) and (max-width:1300px){
-    .galerija{
-        width:45%;
+@media screen and (min-width: 700px) and (max-width: 1300px) {
+    section {
+        grid-template-columns: repeat(2, 1fr); /* Dva stupca na srednje širokim ekranima */
     }
 }
 
@@ -322,6 +395,7 @@ input[type=submit] {
     display: block;
 	background-color: #846abb;
     color: white;
+    font-weight: bold;
     padding: 12px 20px;
     border: none;
     border-radius: 4px;
@@ -344,28 +418,59 @@ input[type=radio]{
 /*VIJESTI.PHP*/
 .vijesti{
     background-color:rgba(173, 216, 230, 0.8);
-    padding:10px 0 20px 0;
-    
+    padding:10px 0 20px 0;   
+}
+
+.vijesti table{
+    width:100%;
+    border-collapse: collapse;
+    text-align:center;
 }
 .vijesti img{
-    width:12%;
+    width:15%;
     float:left;
-    padding:0.5em;
-    margin:0 1em 0.5em 0.5em;
+    padding: 0.5rem;
+    margin:0 1rem 0.5rem 0.5rem;
     border:2px ridge #155ae3 ;
     border-radius: 5px;
 }
+
+.vijesti .actions img {
+    padding:0;
+    margin:0;
+    border:none;
+    width: 25px;
+    height: 25px;
+    vertical-align: middle; /* Poravnanje s tekstom u ćeliji */
+}
+
+.vijesti td img {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    border:none;
+}
+
+
+.vijesti th{
+    background: linear-gradient(to top, hsl(200, 50%, 50%), hsl(200, 50%, 40%));
+}
+
 .vijesti h2 {
 	margin: 0.5em;
-    
 	font-size: 1.5em;
     color: #161f5d;
 	
 }
-
-.vijesti p{
-    font-weight:bold;
+.vijesti th, .vijesti td{
+    padding:1rem;
 }
+
+.vijesti tr:nth-of-type(2n){
+    background-color:rgba(173, 216, 230, 0.5);
+}
+
+
 .vijesti hr {
 	margin: 1em 0 1em 0.5em;
 	border: 2px dotted #000;
@@ -378,20 +483,63 @@ input[type=radio]{
     font-weight: bold;
 }
 
+@media screen and (max-width:700px){
+    .vijesti th {
+        display:none;
+    }
+
+    
+    .vijesti .actions{
+        
+        display:inline-block;
+    }
+    .vijesti .actions::before{
+        content: "";
+        
+    }
+    .vijesti td {
+        display:grid;
+        gap:0.5rem;
+        grid-template-columns: 15ch auto;
+        text-align: left;
+        padding: 0.5rem 1rem;
+    }
+    .vijesti td::first-child{
+        padding-top: 1rem;
+    }
+    .vijesti td::last-child{
+        padding-bottom: 1rem;
+    }
+
+    .vijesti td::before{
+        content:attr(data-label) ": ";
+        font-weight:bold;
+        text-transform:capitalize;
+    }
+}
+
+
 .pojedinacna-vijest img {
-    width: 30%; /* Povećaj širinu slike za pojedinačnu vijest */
+    width: 35%; /* Povećaj širinu slike za pojedinačnu vijest */
     float: left; /* Zadrži sliku na lijevoj strani */
     padding: 1em; /* Povećaj padding za bolji razmak */
-    margin: 0 1.5em 1em 0; /* Prilagodi razmake oko slike */
+    margin: 0 0.5em 0.5em 0; /* Prilagodi razmake oko slike */
     /*border: 3px ridge #155ae3; /* Zadrži sličan okvir kao u .vijesti */
     border-radius: 10px; /* Blago povećaj zaobljenost */
+}
+
+.pojedinacna-vijest p{
+    font-weight:normal;
+    
 }
 .pojedinacna-vijest {
     background-color:rgba(173, 216, 230, 0.8);
     overflow: hidden; /* Osiguraj da float elementi ne izlaze izvan roditelja */
 }
+
+
 .pojedinacna-vijest time {
-    margin:1.5em;
+    margin:1em;
     font-size: 90% ;
     font-style: italic;
     font-weight: bold;
@@ -407,6 +555,13 @@ input[type=radio]{
     .vijesti img{
         width:90%;
     }
+    .pojedinacna-vijest img{
+        width:90%;
+    }
+    .pojedinacna-vijest p{
+        padding-left:0.5rem;
+        font-weight:normal;
+    }
 }
 
 /*REGISTER.PHP*/
@@ -416,6 +571,7 @@ input[type=radio]{
     background-color:rgba(173, 216, 230, 0.8);
     padding:12px;
 }
+
 
 /*SIGNIN.PHP*/
 
@@ -434,73 +590,148 @@ input[type=radio]{
 
 /*ADMIN.PHP*/
 
-.admin_izbornik {
-    background-color: #333; /* Tamna pozadina */
-    padding: 10px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Suptilna sjena */
-}
 
-.admin_izbornik ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center; /* Centriranje stavki */
-    gap: 15px; /* Razmak između stavki */
-}
-
-.admin_izbornik ul li {
-    position: relative;
-}
-
-.admin_izbornik ul li a {
-    text-decoration: none;
-    color: #fff; /* Bijeli tekst */
-    font-weight: bold;
-    font-size: 16px;
-    padding: 10px 15px;
-    background: linear-gradient(90deg, #007BFF, #0056D2); /* Gradient boja */
-    border-radius: 5px;
-    transition: all 0.3s ease; /* Uglađen prijelaz */
-}
-
-.admin_izbornik ul li a:hover {
-    background: linear-gradient(90deg, #0056D2, #007BFF); /* Obrnuti gradient na hover */
-    transform: scale(1.1); /* Povećanje na hover */
-    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.5); /* Svjetlucanje na hover */
-}
-
-.admin_izbornik ul li a:active {
-    transform: scale(1); /* Resetiranje skaliranja pri kliku */
-    box-shadow: none;
-}
-
-.admin_izbornik ul li a::after {
-    content: "";
-    position: absolute;
-    bottom: -5px;
-    left: 50%;
-    width: 0;
-    height: 2px;
-    background: #fff; /* Bijela linija */
-    transition: width 0.3s ease, left 0.3s ease; /* Efekti linije */
-}
-
-.admin_izbornik ul li a:hover::after {
-    width: 100%;
-    left: 0; /* Širenje linije na hover */
-}
 
 
 /*ADMIN/VIJESTI.PHP*/
 
 
-#vijesti{
+
+.AddLink {
+    text-decoration: none;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    color: #FFFFFF !important;
+    display: block;
+    background-color: rgb(134, 213, 15);
+    margin: 8px 4px;
+    padding: 8px;
+    width: 120px;
+    text-align: center;
+}
+
+.AddLink:hover{
+    transition:all 0.3s ease;
+    background-color: rgb(25, 186, 25);
+}
+.BackLink {
+    text-decoration: none;
+    color: #ffffff; /* Bijela boja teksta */
+    background-color: #cc5800; /* Svijetloplava pozadina */
+    padding: 8px 12px;
+    border-radius: 4px;
+    
+    transition: all 0.3s ease; /* Glatka tranzicija */
+}
+
+.BackLink:hover {
+    background-color: #804503; /* Tamnija plava pozadina */
+    color: #e0f7ff; /* Svijetloplava boja teksta */
+}
+
+
+/*ADMIN/USERS.PHP*/
+
+
+/* Stil za cijelu sekciju sa korisnicima */
+.users {
+    max-width: 100%;
+    overflow-x: auto;
     background-color:rgba(173, 216, 230, 0.8);
-    padding:10px 0 20px 0; 
 }
+/* Opći stilovi za tablicu */
+.users table {
+    text-align: center;
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    
 }
-#vijesti img{
-    width:100px;
+/*Novo*/
+
+.users th{
+    background: linear-gradient(to top, hsl(200, 50%, 50%), hsl(200, 50%, 40%));
 }
+.users th, .users td{
+    padding:1rem;
+}
+
+.users tr:nth-of-type(2n){
+    background-color:rgba(173, 216, 230, 0.4);
+}
+
+.users .actions img{
+    width:25px;
+    height:25px;
+}
+
+.users td img{
+    width:20px;
+    height:20px;
+}
+
+/* Dodavanje dodatnog razmaka na lijevoj strani prve kolone */
+.users td:first-child {
+    padding-left: 20px;
+}
+
+
+@media screen and (max-width:650px){
+    .users th {
+        display:none;
+        
+    }
+    .users .actions{
+        
+        display:inline-block;
+    }
+    
+    .users td img {
+        
+        width: 20px;
+        height: 20px;
+        
+    }
+    .users .actions::before{
+        content: "";
+        
+    }
+    .users td {
+        display:grid;
+        gap:0.5rem;
+        grid-template-columns: 15ch auto;
+        text-align: left;
+        padding: 0.5rem 1rem;
+    }
+    .users td::first-child{
+        padding-top: 1rem;
+    }
+    .users td::last-child{
+        padding-bottom: 1rem;
+    }
+
+    .users td::before{
+        content:attr(data-label) ": ";
+        font-weight:bold;
+        text-transform:capitalize;
+    }
+}
+/*Kraj novoga*/
+/* Stil za zaglavlje tablice */
+
+
+
+
+
+.pojedinacni-korisnik {
+    background-color:rgba(173, 216, 230, 0.8);
+    overflow: hidden; /* Osiguraj da float elementi ne izlaze izvan roditelja */
+}
+
+.users time {
+    font-size: 90% ;
+    font-style: italic;
+    font-weight: bold;
+}
+

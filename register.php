@@ -22,7 +22,7 @@
                     <input type="text" id="prezime" name="prezime" placeholder="Vaše prezime..." required><br>
 
                     <label for="email">E-mail *</label><br>
-                    <input type="email" id="email" name="email" placeholder="Vaš E-mail..." required><br>
+                    <input type="email" id="email" name="email" placeholder="Vaš e-mail..." required><br>
 
                     <label for="korime">Korisničko ime *<small>(Korisničko ime mora imati min 5 i maks 10 znakova)</small></label><br>
                     <input type="text" id="korime" name="korime" pattern=".{5,10}" placeholder="Vaše korisničko ime..." required><br>
@@ -80,6 +80,7 @@
                     
                     $_SESSION['message']=  "<p>" . ucfirst(strtolower($_POST['ime'])) . ' ' . ucfirst(strtolower($_POST['prezime'])) . ", hvala na registraciji!</p>";
                     $_SESSION['message_type']= 'success';
+                    header("Location: index.php?menu=7");
                     "<hr>";
                 }
             }   ?>

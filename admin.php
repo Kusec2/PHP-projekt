@@ -3,7 +3,7 @@
 		if (!isset($action)) { $action = 1; } ?>
 		<h1>Administracija</h1>
 		<div id="admin">
-            <nav class="admin_izbornik">
+            <nav class="podstranice">
 			<ul>
 				<li><a href="index.php?menu=8&amp;action=1">Users</a></li>
 				<li><a href="index.php?menu=8&amp;action=2">News</a></li>   

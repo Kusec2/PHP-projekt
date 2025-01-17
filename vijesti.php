@@ -29,7 +29,7 @@
 		while($row = @mysqli_fetch_array($result)) {
 			echo '
 			<div class="vijesti">
-				<img src="vijesti/' . $row['picture'] . '" alt="' . $row['title'] . '" title="' . $row['title'] . '">
+				<img src="vijesti/' . $row['picture'] . '" alt="' . $row['title'] . '" title="' . $row['title'] . ' id="naslovna-vijest"">
 				<h2>' . $row['title'] . '</h2>';
 				if(strlen($row['description']) > 300) {
 					echo substr(strip_tags($row['description']), 0, 300).' <a href="index.php?menu=' . $menu . '&amp;action=' . $row['id'] . '">Više...</a>';

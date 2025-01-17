@@ -6,7 +6,7 @@
     <body>
         <header>
         <h1>Galerija</h1>
-        <nav class="galerija_izbornik">
+        <nav class="podstranice">
             <ul>
                 <li><a href="index.php?menu=2&submenu=1">FDM Printeri</a></li>
                 <li><a href="index.php?menu=2&submenu=2">Printeri na bazi smole</a></li>
