@@ -1,0 +1,26 @@
+# Ignorira konfiguracijske fajlove sa osjetljivim informacijama
+.env
+
+# Ignorira Composer-ov vendor direktorij
+/vendor/
+
+# Ignorira privremene fajlove iz editora
+*.swp
+*.swo
+*.tmp
+*.bak
+
+# Ignorira log fajlove
+*.log
+
+# Ignorira datoteke specifične za IDE/tekst editore
+.idea/
+.vscode/
+
+# Ignorira datoteke za cache
+/cache/
+*.cache
+*.config.php
+
+# Ignorira test coverage fajlove
+coverage/
